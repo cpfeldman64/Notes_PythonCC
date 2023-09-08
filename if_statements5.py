@@ -1,72 +1,97 @@
-# IF tests
-# An IF test can be used to let you handle some items in a list one way
-# and other items another way.
-# You can also use an IF test to determine if specific conditions are met
-# and change the program response depending on those condiditons.
+# If Statements
 
-dogs = ['golden retriever', 'corgi', 'poodle', 'pitbull', 'doberman']
+# Simple if statements
+# if conditional_test:
+#       do something!
 
-for dog in dogs:
-    if dog == 'doberman':
-        print(dog.upper())
-    else:
-        print(dog.title())
+age = 14
+if age >= 15:
+    print("You are old enough for a learner's permit!")
+    print("Have you gone to driver's ed yet?")
+else:
+    print("Sorry, you can't drive yet.")
+    print("You can go to driver's ed once you turn 15!")
 
+# If the conditional test passes, the first test message prints
+# If the conditional test fails, the second test message prints
 
-# Conditional Tests
-# IF statements use expressions that can be evaluated as 
-# TRUE or FALSE, these are called CONDITIONAL TESTS
+# IF - ELIF - ELSE Chains\
+# If-elif-else chains will pass through one test condition only.
+# Not helpful for testing multiple conditions on one 
+# single passthrough test.
 
-# If a test evaluates as TRUE, python will execute the code following
-# an IF statement.
-# If a test evaluates as FALSE, python will ignore the code following
-# an IF statement.
+# Once a variable passes one test, all other tests will be skipped!
 
-cat = 'tabby'
-cat == 'tabby'
+age = 12
+if age < 4:
+    print("\nYour admission cost is $0.")
+elif age < 18:
+    print("\nYour admission cost is $25.")
+else:
+    print("\nYour admission cost is $40.")
 
-# == is an equality operator. If both side match, the evaluation shows
-# true. If they do not match, it shows false.
-
-# TESTING FOR EQUALITY IS CASE SENSITIVE
-# car = 'Audi'
-# car == 'audi'
-# FALSE
-# car.lower() == 'audi' will show true
-
-
-# =! is and inequality operator. This can be used to determine whether
-# two values are not equal
-
-requested_topping = 'mushrooms'
-
-if requested_topping != 'anchovies':
-    print("Hold the anchovies!")
+# NOTE that there is a colon after the else, just like the if and elif!
+# If test checks one item, if that fails, elif test checks next item,
+# if that also fails, it moves to else which is the catch-all for fails.
 
 
-# Numerical Comparisons
-age = 18
-if age == 18:
-    print(True)
+# There is a more efficient way!
 
-answer = 17
-if answer != 42:
-    print('That is not the correct answer. Please try again!')
+new_age = 67
+if new_age < 10:
+    price = 0
+elif new_age < 18:
+    price = 25
+elif new_age < 65:
+    price = 40
+else:
+    price = 15
+print(f"\nYour cost is ${price}")
 
-# You can also use > and < in your conditional checks
+# This method sets individual "price" variables inside of 
+# the if statement. 
 
-new_age = 20
-age < 21
-age <= 21
-age > 21
-age >= 21
+# Omitting the ELSE block
+# The else block is not required, you can instead just use an additional
+# elif block.
 
-# You can also use AND to check multiple conditions simultanesouly
-age_0  = 22
-age_1 = 18
-(age_0 > 21) and (age_1 >= 21)
-# Putting () around the inidividual tests is not required, but it can 
-# enhance readability.
+newest_age = 67
+if newest_age < 10:
+    price = 0
+elif newest_age < 18:
+    price = 25
+elif newest_age < 65:
+    price = 40
+elif newest_age >= 65:
+    price = 15
+print(f"\nYour cost is ${price}")
 
-# You can use OR to check multiple conditions as well
+# This is useful for if you need to extra specific about the categories
+
+# NOTE: The else statement is a catchall. It maches any condition that
+# wasn't previously matched by an if or elif statement, which could
+# potentially include invalid/malicious data.
+
+# TESTING MULTIPLE CONDITIONS WITH IF STATEMENTS
+
+# Using a series of if statements rather than an if-elif-else chain
+# can allow you to test a single variable against multiple tests without
+# skipping any of them if the variable passes one!
+
+pizza_toppings = ['mushrooms', 'pepperoni']
+
+if 'mushrooms' in pizza_toppings:
+    print("\nAdding mushrooms.")
+if 'extra cheese' in pizza_toppings:
+    print("\nAdding extra cheese.")
+if 'pepperoni' in pizza_toppings:
+    print("\nAdding pepperoni.")
+print("\nFinished with your pizza!")
+
+# subsequent if statement tests are run even if the preceding if statement
+# test has been passed!
+
+
+
+
 
