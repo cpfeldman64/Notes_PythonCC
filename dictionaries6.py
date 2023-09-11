@@ -56,6 +56,43 @@ print(dog_1)
 # Or modify individual values by calling and replacing them specifically
 # This way will not change the order of the dictionary during modification
 
+# Alien Speed Change Example
+
+alien_2 = {'color': 'blue', 'points': 5}
+print(alien_2)
+
+alien_2['x_position'] = 0
+alien_2['y_position'] = 25
+alien_2['speed'] = 'medium'
+print(alien_2)
+print(f"Original position: {alien_2['x_position']}")
+
+# Move alien to the right
+# Determine how far to move alien based on current speed
+
+if alien_2['speed'] == 'slow':
+    x_increment = 1
+elif alien_2['speed'] == 'medium':
+    x_increment = 2
+else:
+    # This must be a fast alien
+    x_increment = 3
+
+# The new position is the old position plus the increment.
+alien_2['x_position'] = alien_2['x_position'] + x_increment
+
+print(f"New position: {alien_2['x_position']}")
+# NOTE all of the brackets that must be included for this print statement
 
 
+# Removing Key-Value Pairs
+# can use the del statement to completely remove a key-value pair
+# del just needs the name of the dictionary and the key to be removed
+
+alien_3 = {'color': 'orange', 'points': 4}
+print(alien_3)
+
+del alien_3['points']
+print(alien_3)
+# This will remove the key-value without changing the order of the dictionary
 
