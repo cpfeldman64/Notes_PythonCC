@@ -92,3 +92,15 @@ for dog in sorted(favorite_dogs.values()):
 print("\nThe following dog poll results were:")
 for dog in set(favorite_dogs.values()):
     print(dog.title())
+
+# You can also directly build a set by using braces and separating
+# the elements with commas:
+
+cats = {'maine coon', 'persian blue', 'tabby', 'ginger'}
+print(cats)
+
+# SETS look similar to DICTIONARIES because they are both wrapped in
+# braces. 
+# If you see braces but no key-value pairs, it is a set
+# Sets do not retain items in a specific order!
+
